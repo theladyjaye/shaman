@@ -1,0 +1,4 @@
+#! /bin/sh
+#export LOG=/Applications/Adobe\ Flash\ CS4/AIK1.5/bin/adl.log
+#echo $* >> ${LOG}
+exec /Applications/Adobe\ Flash\ CS4/AIK1.5/bin/_adl $1 "${2}" -profile extendedDesktop "${3}" "${4}"

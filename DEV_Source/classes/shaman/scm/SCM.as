@@ -2,7 +2,7 @@ package shaman.scm
 {
 	import flash.desktop.NativeProcess;
 	import flash.events.NativeProcessExitEvent;
-	//import flash.desktop.NativeProcessStartupInfo;
+	import flash.desktop.NativeProcessStartupInfo;
 	import flash.filesystem.File;
 	import flash.events.ProgressEvent;
 	import flash.events.IOErrorEvent;
@@ -18,7 +18,7 @@ package shaman.scm
 			process.start(processInfo(argv));
 			process.addEventListener(ProgressEvent.STANDARD_OUTPUT_DATA, onOutputData);
 			process.addEventListener(ProgressEvent.STANDARD_ERROR_DATA, onErrorData);
-			//process.addEventListener(NativeProcessExitEvent.EXIT, onExit);
+			process.addEventListener(NativeProcessExitEvent.EXIT, onExit);
 			process.addEventListener(IOErrorEvent.STANDARD_OUTPUT_IO_ERROR, onIOError);
 			process.addEventListener(IOErrorEvent.STANDARD_ERROR_IO_ERROR, onIOError);
 			process.addEventListener(Event.ACTIVATE, onActivate);
@@ -51,10 +51,10 @@ package shaman.scm
 			trace('onErrorData');
 		}
 		
-		/*private function onExit(e:NativeProcessExitEvent):void
+		private function onExit(e:NativeProcessExitEvent):void
 		{
 			trace('onExit');
-		}*/
+		}
 		
 		private function onIOError(e:IOErrorEvent):void
 		{
