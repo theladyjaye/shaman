@@ -1,0 +1,1 @@
+adt -package -storetype pkcs12 -keystore ~/Desktop/mycert.p12 -storepass bassett314 -target native ./shaman.dmg MainWindow-app.xml MainWindow.swf resources/
